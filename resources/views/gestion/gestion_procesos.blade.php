@@ -449,7 +449,7 @@ if (!empty($ultimaetapa)) {
             </div>
         </div>
     </div>
-    <div class="modal fade bd-example-modal-lg" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal  bd-example-modal-lg" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
         <div class="modal-dialog modal-lg" role="document">
             <div class="modal-content">
                 <div class="modal-header">
@@ -470,7 +470,7 @@ if (!empty($ultimaetapa)) {
             </div>
         </div>
     </div>
-    <div class="modal fade bd-example-modal-lg" id="modalemail" tabindex="-1" role="dialog" aria-labelledby="modalemail" aria-hidden="true">
+    <div class="modal  bd-example-modal-lg" id="modalemail" tabindex="-1" role="dialog" aria-labelledby="modalemail" aria-hidden="true">
         <div class="modal-dialog modal-lg" role="document">
             <div class="modal-content">
                 <div class="modal-header">

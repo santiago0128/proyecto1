@@ -79,7 +79,7 @@
             </div>
         </div>
     </div>
-    <div class="modal fade" id="addProceso" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal" id="addProceso" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-lg modal-dialog-scrollable" role="document">
             <div class="modal-content " style="background-color: #343a40;">
                 <div class="modal-body">

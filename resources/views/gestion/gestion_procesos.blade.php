@@ -286,15 +286,15 @@ if (!empty($ultimaetapa)) {
                 &nbsp;
                 <div class="form-group">
                     <div class="form-group col-12 col-sm-12 col-md-12 col-lg-12">
-                        <!-- <label>Tiempo de Gestión</label>
+                        <label>Tiempo de Gestión</label>
                         <input type="text" name="horas" id="horas" class="form-control noFilt" readonly value="00" style="width: 10%; display: inline-block;">&nbsp;:&nbsp;
                         <input type="text" name="minutos" id="minutos" class="form-control noFilt" readonly value="00" style="width: 10%; display: inline-block;">&nbsp;:&nbsp;
                      <input type="text" name="segundos" id="segundos" class="form-control noFilt" readonly value="00" style="width: 10%; display: inline-block;">&nbsp;&nbsp;
-                         <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#demograficos"><i class="fas fa-digital-tachograph"></i>&nbsp;Demograficos</button>
+                         <!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#demograficos"><i class="fas fa-digital-tachograph"></i>&nbsp;Demograficos</button>
                         <button type="button" class="btn btn-success" data-toggle="modal" data-target="#pagos"> <i class="fas fa-money-bill-wave"></i>&nbsp;Pagos</button>
                         <a class="btn btn-primary gestionnumero disabled text-white" title="Remarcar" id="btn-remarcar" data-numero="" data-id=""><i class="fas fa-phone-volume"></i>&nbsp;Remarcar</a>
-                        <a class="btn btn-info text-white" data-toggle="modal" data-target="#modalSpeach"><i class="fas fa-scroll"></i>&nbsp;Speach</a> -->
-                        <a class="btn btn-success text-white" data-toggle="modal" data-target="#modalemail"><i class="fas fa-scroll"></i>&nbsp; Enviar Email</a>
+                        <a class="btn btn-info text-white" data-toggle="modal" data-target="#modalSpeach"><i class="fas fa-scroll"></i>&nbsp;Speach</a>
+                        <a class="btn btn-success text-white" data-toggle="modal" data-target="#modalemail"><i class="fas fa-scroll"></i>&nbsp; Enviar Email</a> -->
                     </div>
                     <form method="POST" id="formGestion">
                         <input type="hidden" class="form-control" name="segundostotales" id="segundostotales">
@@ -352,15 +352,15 @@ if (!empty($ultimaetapa)) {
                                         </tr>
                                     </thead>
                                     @foreach ($procesos as $data)
-                                    <?php //$obligacion = $data->obligaciones  ?>
+                                    <?php $obligacion = $data->obligaciones  ?>
                                     @endforeach
                                     <tbody id="newsRows">
                                         <tr class="filas" data-cont="0">
                                             <td>
                                                 <select name="cuenta[]" id="cuenta" class="form-control">
                                                     <option value="">Seleccione</option>
-                                                    <option value='<?php //echo $obligacion ?>|<?php echo 0 ?>'>
-                                                        <?php //echo $obligacion ?>|<?php echo 0 ?></option>
+                                                    <option value='<?php echo $obligacion ?>|<?php echo 0 ?>'>
+                                                        <?php echo $obligacion ?>|<?php echo 0 ?></option>
 
                                                 </select>
                                             </td>
@@ -384,14 +384,13 @@ if (!empty($ultimaetapa)) {
                             <a class="btn btn-secondary cancelargestion text-white" data-src="Campaign"><i class="fa fa-ban"></i>&nbsp;Cancelar</a>
                             <a class="btn btn-primary text-white" onclick="guardarGestion()" id="btnGuardarGestion"><i class="fa fa-edit"></i>&nbsp;Guardar</a>
                         </div>
-                        @foreach ($clientes as $data)
-                        <?php //$identificacion = $data->identificacion  ?>
-                        @endforeach
+                      
                         @foreach ($procesos as $data)
-                        <?php //$obligacion = $data->obligaciones  ?>
+                        <?php $identificacion = $data->identificacion_demandado; 
+                         $obligacion = $data->obligaciones;  ?>
                         @endforeach
-                        <input type="hidden" name="identificacion" id="identificacion" value="<?php //echo $identificacion ?>">
-                        <input type="hidden" name="obligacion" value="<?php //echo $obligacion ?>">
+                        <input type="hidden" name="identificacion" id="identificacion" value="<?php echo $identificacion ?>">
+                        <input type="hidden" name="obligacion" value="<?php echo $obligacion ?>">
                         <input type="hidden" name="type" value="gestion">
                         <input type="hidden" name="tiempogestion" id="tiempogestion">
                         <input type="hidden" id="dst" name="dst" value="">

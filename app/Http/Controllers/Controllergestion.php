@@ -34,11 +34,6 @@ class Controllergestion extends Controller
             $fecha_agendado = "NULL";
         }
 
-        // if (!empty($telefono)) {
-        //     $telefono = $telefono;
-        // } else {
-        //     $telefono = "NULL";
-        // }
 
         try {
             $gestion2 = ModelGestion::InsertarGestion( $gestion, $segundos_totales, $etapa, $accion, $id, $ip, $identificacion, $fecha_agendado, $codllamada, $login, $obligacion);

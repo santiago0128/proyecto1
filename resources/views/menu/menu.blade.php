@@ -17,7 +17,7 @@
                 <div class="navbar-brand">
                     <a href="index.html">
                         <img src="{{ asset('img/user.png')}}" alt="Mplify Logo" class="img-responsive logo">
-                        <span class="name">mplify</span>
+                        <span class="name">Logo</span>
                     </a>
                 </div>
 

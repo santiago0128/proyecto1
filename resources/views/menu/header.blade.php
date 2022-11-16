@@ -1,5 +1,5 @@
 <head>
-    <title>:: Mplify Dark :: Home</title>
+    <title>Call Center</title>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
@@ -29,7 +29,6 @@
     <link rel="stylesheet" href="{{ asset('vendor/jquery-steps/jquery.steps.css')}}">
     <link rel="stylesheet" href="{{ asset('vendor/jquery-ui/jquery-ui.min.css')}}">
     <link rel="stylesheet" href="{{ asset('vendor/DataTables/datatables.min.css')}}">
-    <!-- <link rel="stylesheet" href="{{ asset('vendor/ckeditor/ckeditor.css')}}"> -->
     <script src="{{ asset('vendor/ckeditor/ckeditor.js')}}"></script>
     <script src="https://cdn.ckeditor.com/ckeditor5/11.0.1/classic/ckeditor.js"></script>
 

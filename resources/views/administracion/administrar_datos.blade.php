@@ -160,13 +160,13 @@
                                                                                  fill="red" />
                                                                        </svg>';
                                                                                     } ?></td>
-                                                                                    <?php if($perfil_admin->id != 43){ ?>
-                                        <td class="text-center" id="boton_estado"> <?php if ($perfil_admin->idestatus == 1) {
-                                                                                        echo "<button type='button' class='btn btn-danger' onclick='(deshabilitarperfil($perfil_admin->id))'>Deshabilitar</button>";
-                                                                                    } else {
-                                                                                        echo "<button type='button' class='btn btn-success' onclick='(habilitarperfil($perfil_admin->id))'>Habilitar</button>";
-                                                                                    } ?></td>
-                                                                                     <?php } ?>
+                                        <?php if ($perfil_admin->id != 43) { ?>
+                                            <td class="text-center" id="boton_estado"> <?php if ($perfil_admin->idestatus == 1) {
+                                                                                            echo "<button type='button' class='btn btn-danger' onclick='(deshabilitarperfil($perfil_admin->id))'>Deshabilitar</button>";
+                                                                                        } else {
+                                                                                            echo "<button type='button' class='btn btn-success' onclick='(habilitarperfil($perfil_admin->id))'>Habilitar</button>";
+                                                                                        } ?></td>
+                                        <?php } ?>
                                     </tr>
                                     @endforeach
                                 </tbody>
@@ -178,7 +178,9 @@
             </div>
         </div>
     </div>
-    <div class="modal fade" id="addEtapa" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+
+    
+    <div class="modal" id="addEtapa" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-lg modal-dialog-scrollable" role="document">
             <div class="modal-content">
                 <div class="modal-body">
@@ -208,7 +210,7 @@
             </div>
         </div>
     </div>
-    <div class="modal fade" id="editEtapa" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal " id="editEtapa" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-lg modal-dialog-scrollable" role="document">
             <div class="modal-content">
                 <div class="modal-body">
@@ -250,7 +252,7 @@
             </div>
         </div>
     </div>
-    <div class="modal fade" id="editAccion" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal " id="editAccion" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-lg modal-dialog-scrollable" role="document">
             <div class="modal-content">
                 <div class="modal-body">
@@ -284,7 +286,7 @@
             </div>
         </div>
     </div>
-    <div class="modal fade" id="modulos" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal " id="modulos" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-lg modal-dialog-scrollable" role="document">
             <div class="modal-content">
                 <div class="modal-body">
@@ -337,7 +339,7 @@
             </div>
         </div>
     </div>
-    <div class="modal fade" id="addAccion" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal " id="addAccion" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-lg modal-dialog-scrollable" role="document">
             <div class="modal-content">
                 <div class="modal-body">
@@ -367,7 +369,7 @@
             </div>
         </div>
     </div>
-    <div class="modal fade" id="addPerfil" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal " id="addPerfil" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-lg modal-dialog-scrollable" role="document">
             <div class="modal-content">
                 <div class="modal-body">
@@ -397,7 +399,7 @@
             </div>
         </div>
     </div>
-    <div class="modal fade" id="editPerfil" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal " id="editPerfil" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-lg modal-dialog-scrollable" role="document">
             <div class="modal-content">
                 <div class="modal-body">
@@ -419,11 +421,11 @@
                                                 @foreach ($perfil_admin_edit as $perfil_admin_edit)
 
                                                 <tr>
-                                                    <?php if($perfil_admin_edit->id != 43) {
-                                                        echo '<td class="text-center"><input class="form-control" type="text" name="nombre_perfil_edit" id="nombre_perfil_edit" value="'.$perfil_admin_edit->nombre.'" ></td>';
-                                                        echo '<td class="text-center"><input class="form-control" type="number" name="peso_perfil_edit" id="peso_perfil_edit" value="'.$perfil_admin_edit->peso.'" ></td>';
-                                                        echo '<td class="text-center"><button class="btn btn-danger" type="button" onclick="eliminar_perfil('.$perfil_admin_edit->id.')">Eliminar</button></td>';
-                                                    }?>
+                                                    <?php if ($perfil_admin_edit->id != 43) {
+                                                        echo '<td class="text-center"><input class="form-control" type="text" name="nombre_perfil_edit" id="nombre_perfil_edit" value="' . $perfil_admin_edit->nombre . '" ></td>';
+                                                        echo '<td class="text-center"><input class="form-control" type="number" name="peso_perfil_edit" id="peso_perfil_edit" value="' . $perfil_admin_edit->peso . '" ></td>';
+                                                        echo '<td class="text-center"><button class="btn btn-danger" type="button" onclick="eliminar_perfil(' . $perfil_admin_edit->id . ')">Eliminar</button></td>';
+                                                    } ?>
                                                 </tr>
                                                 @endforeach
                                             </tbody>

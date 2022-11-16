@@ -1,4 +1,3 @@
-const { error } = require("jquery");
 
 function deshabilitarperfil(value) {
 

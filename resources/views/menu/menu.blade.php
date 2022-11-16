@@ -4,8 +4,8 @@
 <body class="theme-blue">
     <div class="page-loader-wrapper">
         <div class="loader">
-            <div class="m-t-30"><img src="assets/images/thumbnail.png" width="48" height="48" alt="Mplify"></div>
-            <p>Please wait...</p>
+            <div class="m-t-30"><img src="{{ asset('img/user.png')}}" style="color: black;" width="48" height="48" alt="Mplify"></div>
+            <p>Cargando...</p>
         </div>
     </div>
     <div class="overlay" style="display: none;"></div>

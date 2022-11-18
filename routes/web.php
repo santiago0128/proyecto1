@@ -7,6 +7,7 @@ use App\Http\Controllers\Controllergestion;
 use App\Http\Controllers\Controllerclientes;
 use App\Http\Controllers\Controlleradministraciongestion;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Auth;
 
 /*
 |--------------------------------------------------------------------------
@@ -26,6 +27,7 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/logout', [App\Http\Controllers\HomeController::class] ,'logout');
 
 
 Route::get('/administracion',[Controller::class,'administracion']);

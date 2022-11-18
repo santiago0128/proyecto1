@@ -1,4 +1,9 @@
+<?php
 
+use Illuminate\Support\Facades\Auth;
+
+$users = Auth::user();
+?>
 
 
 <body class="theme-blue">
@@ -48,20 +53,23 @@
                                                     <img src="assets/images/user-small.png" class="rounded" width="50" alt="">
                                                 </div>
                                                 <div class="drop-right">
-                                                    <h4>Samuel Morriss</h4>
-                                                    <p class="user-name">samuelmorris@info.com</p>
+                                                    <h4>{{$users->name}}</h4>
                                                 </div>
                                             </div>
-                                            <div class="m-t-10 p-3 drop-list">
+                                            <div class=" m-t-10 p-3 drop-right">
                                                 <ul class="list-unstyled">
-                                                    <li><a href="page-profile.html"><i class="icon-user"></i>Mi Perfil</a></li>
                                                     <li><a href="app-inbox.html"><i class="icon-envelope-open"></i>Mi Cuenta</a></li>
-                                                    <li class="divider"></li>
-                                                    <li><a href="javascript:void(0);"><i class="icon-settings"></i>Incio</a></li>
-                                                    <li><a href="javascript:void(0);"><i class="icon-settings"></i>Ayuda</a></li>
-                                                    <li><a href="javascript:void(0);"><i class="icon-settings"></i>Contacto</a></li>
                                                     <li><a href="javascript:void(0);"><i class="icon-settings"></i>Settings</a></li>
-                                                    <li><a href="page-login.html"><i class="icon-power"></i>Cerrar Session</a></li>
+                                                    <li>
+                                                        <a href="{{ route('logout') }}" 
+                                                        onclick="event.preventDefault();
+                                                         document.getElementById('logout-form').submit();">
+                                                            <i class="icon-power">Cerrar Sesion</i>
+                                                        </a>
+                                                        <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                                            @csrf
+                                                        </form>
+                                                    </li>
                                                 </ul>
                                             </div>
                                         </div>
@@ -78,7 +86,7 @@
                 <nav id="leftsidebar-nav" class="sidebar-nav">
                     <ul id="main-menu" class="metismenu">
                         <li class="heading">Main</li>
-                        <li class="active"><a href="index.php" ><i class="icon-home"></i><span>Inicio</span></a></li>
+                        <li class="active"><a href="index.php"><i class="icon-home"></i><span>Inicio</span></a></li>
                         <li class="heading">App</li>
 
                         <li class="middle">
@@ -86,18 +94,19 @@
                             <ul>
                                 <li><a type="button" id="btnprocesos">Procesos</a></li>
                                 <li><a type="button" id="btnmovimientos">Movimientos</a></li>
-                                <li><a type="button" id="btnnovedades" >Novedades</a></li>
+                                <li><a type="button" id="btnnovedades">Novedades</a></li>
                                 <li><a type="button" id="btnreportes">Reportes</a></li>
                             </ul>
                         </li>
                         <li class="middle">
                             <a href="#uiElements" class="has-arrow"><i class=" icon-briefcase "></i><span>Gestión</span></a>
                             <ul>
-                                <li><a type="button" id="btntareas" >Procesos</a></li>
+                                <li><a type="button" id="btntareas">Procesos</a></li>
                                 <li><a type="button" id="btncalendario">Calendario</a></li>
                                 <li><a href="ui-tabs.html">Flujos de Trabajo</a></li>
                             </ul>
                         </li>
+                        @if($users->rol == 'dev')
                         <li class="middle">
                             <a href="#uiElements" class="has-arrow"><i class=" icon-briefcase "></i><span>Administración</span></a>
                             <ul>
@@ -106,6 +115,7 @@
                                 <li><a type="button" id="btnadmgestion">Gestion</a></li>
                             </ul>
                         </li>
+                        @endif
                     </ul>
                 </nav>
             </div>

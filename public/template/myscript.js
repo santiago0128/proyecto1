@@ -233,7 +233,6 @@ function form_buscar() {
 
 function copyfile() {
 
-  // alert("buenas");
   var datos = new FormData($('#formUploadCsv')[0]);
   $.ajax({
     headers: {
